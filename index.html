@@ -5,23 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SmileyOS</title>
+  <title>Smiley</title>
+  <link rel="icon" type="image/jpg" href="assets/images/WinXP.jpg">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="lib/98.css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/xp.css">
 </head>
 
 <body>
   <div id="desktop">
-    <div class="window" style="width: 300px;">
-      <div class="title_bar">
-        <div class="title_bar_text">About Me</div>
-        <div class="title_bar_controls">
-          <button aria-label="Close"></button>
+
+
+    <div class="desktop-icons">
+
+      <div class="d-icon" onclick="openWindow('win-about')">
+        <img src="assets/icons/win98_computer.png" alt="About Me" class="icon-img" />
+        <span class="icon-label">About Me</span>
+      </div>
+    </div>
+
+    <div class="window" id="win-about" style="width: 310px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">About Me</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close" onclick="closeWindow('win-about')"></button>
         </div>
       </div>
-      <div class="window_body">
-        <p>
+      <div class="window-body">
+        <h4>
           Hello World!
+        </h4>
+        <h5>
+          ハローワールド！
+        </h5>
+        <p>
+          I'm a CS grad into AI/ML, back-end, drawing, video games, anime, manga, and anything
+          introverted （・ω・）b
         </p>
       </div>
 
@@ -31,6 +51,7 @@
   <div id="taskbar">
 
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
