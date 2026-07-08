@@ -21,6 +21,35 @@
         <img src="assets/icons/win98_computer.png" alt="About Me" class="icon-img" />
         <span class="icon-label">About Me</span>
       </div>
+
+      <div class="d-icon" onclick="openWindow('win-files')">
+        <img src="assets/icons/win98_folder.png" alt="Files" class="icon-img" />
+        <span class="icon-label">Files</span>
+      </div>
+
+      <div class="d-icon" onclick="openWindow('win-projects')">
+        <img src="assets/icons/win98_program_group.png" alt="Projects" class="icon-img" />
+        <span class="icon-label">Projects</span>
+      </div>
+
+      <div class="d-icon" onclick="openWindow('win-contact')">
+        <img src="assets/icons/win98_telephone.png" alt="Contact" class="icon-img" />
+        <span class="icon-label">Contact</span>
+      </div>
+
+      <div class="d-icon" onclick="openWindow('win-resume')">
+        <img src="assets/icons/win98_note.png" alt="Resume" class="icon-img" />
+        <span class="icon-label">Resume</span>
+      </div>
+
+      <div class="d-icon" onclick="openWindow('win-blog')">
+        <img src="assets/icons/win98_garf.png" alt="Blog" class="icon-img" />
+        <span class="icon-label">Blog</span>
+      </div>
+
+      
+
+
     </div>
 
     <div class="window" id="win-about" style="width: 310px; position: absolute; display:none; z-index: 10;">
@@ -49,6 +78,8 @@
 
   </div>
   <div id="taskbar">
+    <button class="start-button" onclick="toggleStartMenu(event)" aria-label="Start Menu"></button>
+
 
   </div>
   <script src="script.js"></script>

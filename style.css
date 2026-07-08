@@ -18,7 +18,7 @@ body {
   left: 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   z-index: 1;
 }
 
@@ -37,6 +37,7 @@ body {
   height: 64px;
   margin-bottom: 2px;
   image-rendering: pixelated;
+  position: relative;
 }
 
 .icon-label {
@@ -45,10 +46,54 @@ body {
   font-size: 11px;
   text-shadow: 1px 1px 1px black;
   padding: 2px 4px;
+  margin-top: 54px;
   word-wrap: break-word;
   user-select: none;
+  position: absolute;
 }
 
 .d-icon:hover .icon-label {
   background-color: #0a246a;
+}
+
+
+
+
+.start-button {
+  width: 99px;
+  height: 33px;
+  background-image: url('assets/icons/XP_Button_ClearType.png');
+  cursor: pointer;
+  background-position: 0 -10px; 
+  background-repeat: no-repeat;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background-color: transparent;
+  will-change: background-position;
+  image-rendering: pixelated;
+}
+
+.start-button:hover {
+  background-position: 0 -64px; 
+}
+
+.start-button:active {
+  background-image: url('assets/icons/XP_Button_ClearType.png') !important;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-position: 0 -118px !important;
+}
+
+.start-button.is-active {
+  background-position: 0 -118px !important;
+}
+
+.start-button.is-active:hover {
+  background-position: 0 -118px !important;
 }
