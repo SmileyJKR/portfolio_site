@@ -42,6 +42,11 @@
         <span class="icon-label">Resume</span>
       </div>
 
+      <div class="d-icon" onclick="openWindow('win-friends')">
+        <img src="assets/icons/win98_comic_chat.png" alt="Friends" class="icon-img" />
+        <span class="icon-label">Friends</span>
+      </div>
+
       <div class="d-icon" onclick="openWindow('win-blog')">
         <img src="assets/icons/win98_garf.png" alt="Blog" class="icon-img" />
         <span class="icon-label">Blog</span>
@@ -52,12 +57,13 @@
 
     </div>
 
-    <div class="window" id="win-about" style="width: 310px; position: absolute; display:none; z-index: 10;">
+    <!-- About Me Window -->
+    <div class="window" id="win-about" style="width: 300px; position: absolute; display:none; z-index: 10;">
       <div class="title-bar">
         <div class="title-bar-text">About Me</div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
+          <button aria-label="Minimize" onclick="minimizeWindow('win-about')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-about')"></button>
           <button aria-label="Close" onclick="closeWindow('win-about')"></button>
         </div>
       </div>
@@ -69,15 +75,126 @@
           ハローワールド！
         </h5>
         <p>
-          I'm a CS grad into AI/ML, back-end, drawing, video games, anime, manga, and anything
-          introverted （・ω・）b
+          I'm a CS grad into AI/ML, back-end engineering, drawing, video games, anime, manga, and anything
+          introverted 
+          （・ω・）b
+        </p>
+        <p>
+          This desktop is a portfolio site that I made to showcase some of my projects and skills. 
+          Feel free to explore the windows, icons, menu, and so on and check out my work! 
+          Hope you enjoy it! (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 
+          and welcome to my corner of the internet! ( ^ ^ )/
         </p>
       </div>
-
     </div>
 
+    <!-- Files Window -->
+    <div class="window" id="win-files" style="width: 300px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Files</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-files')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-files')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-files')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>
+          This is the Files window. It's going to show some files and such..? Hmm thought it'd be cool to show case a directory
+          but maybe not. We'll see :p
+          For now it's gonna be a placeholder window d(o - o ;)
+        </p>
+      </div>
+    </div>
+
+    <!-- Projects Window -->
+     <div class="window" id="win-projects" style="width: 300px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Projects</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-projects')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-projects')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-projects')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>
+          This is the Projects window. It's going to show hyperlinks to my projects, or gonna have it acts as a folder to be able to click on 
+          my various projects. Again W.I.P
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Window-->
+    <div class="window" id="win-contact" style="width: 300px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Contact</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-contact')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-contact')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-contact')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>
+          This is the Contact window. It's going to show my contact information, or maybe a contact form. 
+          Again W.I.P
+        </p>
+      </div>
+    </div>
+
+    <!-- Resume Window -->
+     <div class="window" id="win-resume" style="width: 300px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Resume</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-resume')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-resume')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-resume')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>
+          This is the Resume window. It's going to show my resume or clickable link to download my resume.
+          Again W.I.P
+        </p>
+      </div>
+    </div>
+
+    <!-- Friends Window -->
+     <div class="window" id="win-friends" style="width: 300px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Friends</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-friends')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-friends')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-friends')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p style="font-weight: bold; font-size: 1.2em;" text-align="center">
+          Some cool sites friends made!
+        </p>
+        <p style="font-weight: bold;">Ryan ->
+          <a href="https://ryun.dev" target="_blank" style="font-weight: normal">Ryun.dev</a>
+        </p>
+        <p>
+          This is the Friends window. It's going to show my friends or maybe a list of friends I have on social media.
+          Again W.I.P
+        </p>
+      </div>
+    </div>
+
+    <!-- Blog Window -->
+
+
   </div>
+
+  <!-- Task Bar -->
   <div id="taskbar">
+    
+
+    <!-- The Start Button / Menu Button -->
     <button class="start-button" onclick="toggleStartMenu(event)" aria-label="Start Menu"></button>
 
 

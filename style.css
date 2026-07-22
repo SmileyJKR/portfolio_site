@@ -32,6 +32,7 @@ body {
   text-align: center;
 }
 
+
 .icon-img {
   width: 64px;
   height: 64px;
@@ -71,7 +72,6 @@ body {
   border: none !important;
   background-color: transparent;
   will-change: background-position;
-  image-rendering: pixelated;
 }
 
 .start-button:hover {
