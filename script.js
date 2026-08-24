@@ -46,6 +46,9 @@ function openWindow(windowId) {
   const win = document.getElementById(windowId);
   if (win) {
     win.style.display = "block";
+    win.style.zIndex = ++zCounter;
+    windowState[windowId].isMinimized = false;
+    addTaskbarButton(windowId);
   }
 }
 
@@ -53,7 +56,49 @@ function closeWindow(windowId) {
   const win = document.getElementById(windowId);
   if (win) {
     win.style.display = "none";
+    removeTaskbarButton(windowId);
   }
+}
+
+function removeTaskbarButton(windowId) {
+  const btn = document.querySelector(`.taskbar-btn[data-window="${windowId}"`);
+  if (btn) {
+    btn.remove();
+  }
+}
+
+function restoreWindow(windowId) {
+  const win = document.getElementById(windowId);
+  const state = windowState[windowId];
+  win.style.display = "block";
+  win.style.zIndex = ++zCounter;
+  state.isMinimized = false;
+}
+
+function addTaskbarButton(windowId) {
+  const existing = document.querySelector(
+    `.taskbar-btn[data-window="${windowId}"]`,
+  );
+  if (existing) return; // if it already exists, no need to duplicate
+
+  const win = document.getElementById(windowId);
+  const title = win.querySelector(".title-bar-text").textContent;
+
+  const btn = document.createElement("button");
+  btn.className = "taskbar-btn";
+  btn.dataset.window = windowId;
+  btn.textContent = title;
+
+  btn.onclick = () => {
+    const state = windowState[windowId];
+    if (state.isMinimized) {
+      restoreWindow(windowId);
+    } else {
+      minimizeWindow(windowId); // clicking an open window's taskbar button minimizes it
+    }
+  };
+
+  document.getElementById("taskbar-windows").appendChild(btn);
 }
 
 function maximizeWindow(windowId) {
@@ -80,11 +125,12 @@ function maximizeWindow(windowId) {
   }
 }
 
-// function minimizeWindow(windowId){
-//   const win = document.getElementById(windowId);
-//   //implement later once taskbar is implemented
-//   break
-// }
+function minimizeWindow(windowId) {
+  const win = document.getElementById(windowId);
+  const state = windowState[windowId];
+  win.style.display = "none";
+  state.isMinimized = true;
+}
 
 function toggleStartMenu(e) {
   if (e) {

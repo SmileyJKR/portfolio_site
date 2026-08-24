@@ -8,12 +8,12 @@ body {
 #desktop {
   width: 100%;
   /* this is for the task bar (e.g. 40px) */
-  background-image: url('assets/images/pixel-art.png');
+  background-image: url("assets/images/pixel-art.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: calc(100vh - 40px);
-  position: relative
+  position: relative;
 }
 
 .desktop-icons {
@@ -35,7 +35,6 @@ body {
   cursor: pointer;
   text-align: center;
 }
-
 
 .icon-img {
   width: 64px;
@@ -61,15 +60,12 @@ body {
   background-color: #0a246a;
 }
 
-
-
-
 .start-button {
   width: 99px;
   height: 33px;
-  background-image: url('assets/icons/XP_Button_ClearType.png');
+  background-image: url("assets/icons/XP_Button_ClearType.png");
   cursor: pointer;
-  background-position: 0 -10px; 
+  background-position: 0 -10px;
   background-repeat: no-repeat;
   outline: none !important;
   box-shadow: none !important;
@@ -79,11 +75,11 @@ body {
 }
 
 .start-button:hover {
-  background-position: 0 -64px; 
+  background-position: 0 -64px;
 }
 
 .start-button:active {
-  background-image: url('assets/icons/XP_Button_ClearType.png') !important;
+  background-image: url("assets/icons/XP_Button_ClearType.png") !important;
   background-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
@@ -100,4 +96,38 @@ body {
 
 .start-button.is-active:hover {
   background-position: 0 -118px !important;
+}
+
+#taskbar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #245edb; /* this is a placeholder for rn, once I get a confirmed background and idea of what all the colors are, I'll redo the colors */
+}
+
+#taskbar-windows {
+  display: flex;
+  gap: 4px;
+  padding: 0 6px;
+  flex: 1;
+  align-items: center;
+}
+
+.taskbar-btn {
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+  color: white;
+  background: #3f7fd1;
+  border: 1px solid #1e3f6f;
+  border-radius: 2px;
+  padding: 3px 10px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
