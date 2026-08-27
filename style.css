@@ -107,6 +107,8 @@ body {
   left: 0;
   width: 100%;
   background: #245edb; /* this is a placeholder for rn, once I get a confirmed background and idea of what all the colors are, I'll redo the colors */
+  z-index: 999;
+  gap: 4px;
 }
 
 #taskbar-windows {
@@ -130,4 +132,21 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.taskbar-btn-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixel;
+  transform: scale(2);
+  margin-bottom: -4px;
+  margin-left: -2px;
+  position: relative;
+  z-index: 999;
+}
+
+.taskbar-btn span {
+  margin-left: -2px;
+  position: relative;
+  z-index: 1000;
 }

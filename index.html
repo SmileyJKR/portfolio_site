@@ -52,6 +52,11 @@
         <span class="icon-label">Blog</span>
       </div>
 
+      <div class="d-icon" onclick="openWindow('win-cephalodae')">
+        <img src="assets/icons/win98_printer.png" alt="Cephalodae" class="icon-img" />
+        <span class="icon-label">Cephalodae</span>
+      </div>
+
       
 
 
@@ -178,6 +183,9 @@
         <p style="font-weight: bold;">Ryan ->
           <a href="https://ryun.dev" target="_blank" style="font-weight: normal">Ryun.dev</a>
         </p>
+        <p style="font-weight: bold;">Emmett ->
+          <a href="https://EmmettDodge.com" target="_blank" style="font-weight: normal">EmmettDodge.com</a>
+        </p>  
         <p>
           This is the Friends window. It's going to show my friends or maybe a list of friends I have on social media.
           Again W.I.P
@@ -186,6 +194,23 @@
     </div>
 
     <!-- Blog Window -->
+    
+    <!-- Cephalodae -->
+    <div class="window" id="win-cephalodae" style="width: 300px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Cephalodae</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-cephalodae')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-cephalodae')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-cephalodae')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Joint website between me and Ry</p>
+          <a target="_blank" style="font-weight: normal" href="https://cephalodae.com">Cephlodae.com</a>
+      </div>
+    </div>
+   
 
 
   </div>

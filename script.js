@@ -81,13 +81,24 @@ function addTaskbarButton(windowId) {
   );
   if (existing) return; // if it already exists, no need to duplicate
 
+  const icon = document.querySelector(`.d-icon[onclick*="${windowId}"] img`);
   const win = document.getElementById(windowId);
   const title = win.querySelector(".title-bar-text").textContent;
 
   const btn = document.createElement("button");
   btn.className = "taskbar-btn";
   btn.dataset.window = windowId;
-  btn.textContent = title;
+
+  if (icon) {
+    const img = document.createElement("img");
+    img.src = icon.src;
+    img.className = "taskbar-btn-icon";
+    btn.appendChild(img);
+  }
+
+  const label = document.createElement("span");
+  label.textContent = title;
+  btn.appendChild(label);
 
   btn.onclick = () => {
     const state = windowState[windowId];
