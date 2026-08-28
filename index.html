@@ -194,6 +194,20 @@
     </div>
 
     <!-- Blog Window -->
+    <div class="window" id="win-blog" style="width: 400px; position: absolute; display:none; z-index: 10;">
+      <div class="title-bar">
+        <div class="title-bar-text">Blog</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize" onclick="minimizeWindow('win-blog')"></button>
+          <button aria-label="Maximize" onclick="maximizeWindow('win-blog')"></button>
+          <button aria-label="Close" onclick="closeWindow('win-blog')"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div id="blog-list"></div>
+        <div id="blog-detail" style="display:none;"></div>
+      </div>
+    </div>
     
     <!-- Cephalodae -->
     <div class="window" id="win-cephalodae" style="width: 300px; position: absolute; display:none; z-index: 10;">
