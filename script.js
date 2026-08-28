@@ -178,3 +178,61 @@ document.addEventListener("click", function (event) {
     }
   }
 });
+
+// Blog function scripts
+
+async function loadBlogIndex() {
+  const res = await fetch("blog/index.json");
+  const posts = await res.json();
+
+  posts.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+  renderBlogList(posts);
+}
+
+function renderBlogList(posts) {
+  const list = document.getElementById("blog-list");
+  list.innerHTML = "";
+
+  posts.forEach((post, index) => {
+    const entry = document.createElement("div");
+    entry.className =
+      index === 0 ? "blog-entry blog-entry-featured" : "blog-entry";
+    entry.innerHTML = `
+      ${index === 0 ? "<h4>Most Recent Post!</h4>" : ""}
+      <a href="#" class="blog-link" data-path="${post.path}">${post.header}</a>
+      <p class="blog-date">${post.date}</p>
+      <p class="blog-tldr">${post.tldr}</p>
+    `;
+    list.appendChild(entry);
+  });
+
+  document.querySelectorAll(".blog-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      openBlogPost(link.dataset.path);
+    });
+  });
+}
+
+async function openBlogPost(path) {
+  const res = await fetch(path);
+  const post = await res.json();
+
+  document.getElementById("blog-list").style.display = "none";
+  const detail = document.getElementById("blog-detail");
+  detail.style.display = "block";
+  detail.innerHTML = `
+    <button onclick="closeBlogPost()">&larr; Back</button>
+    <h3>${post.header}</h3>
+    <p class="blog-date">${post.date}</p>
+    <p>${post.subject}</p>
+  `;
+}
+
+function closeBlogPost() {
+  document.getElementById("blog-detail").style.display = "none";
+  document.getElementById("blog-list").style.display = "block";
+}
+
+loadBlogIndex(); //calls once when this script gets loaded
