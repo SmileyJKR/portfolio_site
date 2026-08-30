@@ -150,3 +150,59 @@ body {
   position: relative;
   z-index: 1000;
 }
+
+.star-box {
+  border: 2px dashed #ffb6d9;
+  border-radius: 8px;
+  background: #fff06f;
+  padding: 12px;
+  position: relative;
+}
+
+.star-box::before {
+  content: "★";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  color: #ffd700;
+  font-size: 1.4rem;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#twinkle-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.twinkle-star {
+  position: absolute;
+  color: gold;
+  font-size: 0.8rem;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.wave-char {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}

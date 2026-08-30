@@ -197,7 +197,7 @@ function renderBlogList(posts) {
   posts.forEach((post, index) => {
     const entry = document.createElement("div");
     entry.className =
-      index === 0 ? "blog-entry blog-entry-featured" : "blog-entry";
+      index === 0 ? "blog-entry blog-entry-featured star-box" : "blog-entry";
     entry.innerHTML = `
       ${index === 0 ? "<h4>Most Recent Post!</h4>" : ""}
       <a href="#" class="blog-link" data-path="${post.path}">${post.header}</a>
@@ -205,6 +205,11 @@ function renderBlogList(posts) {
       <p class="blog-tldr">${post.tldr}</p>
     `;
     list.appendChild(entry);
+
+    if (index === 0) {
+      const titleObj = entry.querySelector(".blog-link");
+      waveify(titleObj);
+    }
   });
 
   document.querySelectorAll(".blog-link").forEach((link) => {
@@ -234,5 +239,32 @@ function closeBlogPost() {
   document.getElementById("blog-detail").style.display = "none";
   document.getElementById("blog-list").style.display = "block";
 }
+
+function waveify(obj) {
+  const text = obj.textContent;
+  obj.textContent = "";
+
+  [...text].forEach((char, i) => {
+    const span = document.createElement("span");
+    span.textContent = char === " " ? "\u00A0" : char; //needed to preserve space
+    span.style.animationDelay = `${i * 0.2}s`;
+    span.classList.add("wave-char");
+    obj.appendChild(span);
+  });
+}
+
+function createTwinkleStars(count = 30) {
+  const container = document.getElementById("twinkle-container");
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement("span");
+    star.textContent = "★";
+    star.className = "twinkle-star";
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 2}s`;
+    container.appendChild(star);
+  }
+}
+createTwinkleStars();
 
 loadBlogIndex(); //calls once when this script gets loaded
